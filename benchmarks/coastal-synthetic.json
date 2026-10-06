@@ -1,0 +1,1017 @@
+{
+  "schema_version": "0.1",
+  "generator": "templates-v1",
+  "policy": "refinement-v1",
+  "seed": 42,
+  "journeys": [
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "near",
+        "location": {
+          "label": "Fictional coast, near the harbor",
+          "lat": 15.004,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/searcher/near",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Plan an evening with dinner and a walk. What would you suggest? Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, near the harbor. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_0008c2725692ebc3"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "mid",
+        "location": {
+          "label": "Fictional coast, inland village",
+          "lat": 15.03,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/planner/mid",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Plan an evening with dinner and a walk. Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, inland village. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_21b0bfe53d0eebfe"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "far",
+        "location": {
+          "label": "Fictional coast, northern bay",
+          "lat": 15.12,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/planner/far",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Find a seafood dinner. What would you suggest? Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, northern bay. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_245aff6dccebfe51"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "mid",
+        "location": {
+          "label": "Fictional coast, inland village",
+          "lat": 15.03,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/searcher/mid",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Plan an evening with dinner and a walk. Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, inland village. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_3a8d2cdd0825cea0"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "near",
+        "location": {
+          "label": "Fictional coast, near the harbor",
+          "lat": 15.004,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/searcher/near",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Plan an evening with dinner and a walk. Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, near the harbor. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_4bd7bada7014ddb2"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "mid",
+        "location": {
+          "label": "Fictional coast, inland village",
+          "lat": 15.03,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/searcher/mid",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Find a seafood dinner. What would you suggest? Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, inland village. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_5fcf7b42b64dc6b4"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "far",
+        "location": {
+          "label": "Fictional coast, northern bay",
+          "lat": 15.12,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/searcher/far",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Plan an evening with dinner and a walk. Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, northern bay. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_691d21c8f0038dbe"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "near",
+        "location": {
+          "label": "Fictional coast, near the harbor",
+          "lat": 15.004,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/planner/near",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Find a seafood dinner. Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, near the harbor. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_8e4ee4226743b64f"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "mid",
+        "location": {
+          "label": "Fictional coast, inland village",
+          "lat": 15.03,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/searcher/mid",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Find a seafood dinner. Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, inland village. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_91426bf347051266"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "mid",
+        "location": {
+          "label": "Fictional coast, inland village",
+          "lat": 15.03,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/planner/mid",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Find a seafood dinner. What would you suggest? Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, inland village. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_950144be92f5eb1b"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "far",
+        "location": {
+          "label": "Fictional coast, northern bay",
+          "lat": 15.12,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/searcher/far",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Find a seafood dinner. What would you suggest? Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, northern bay. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_96ec93b695f0d6c6"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "near",
+        "location": {
+          "label": "Fictional coast, near the harbor",
+          "lat": 15.004,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/planner/near",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Find a seafood dinner. What would you suggest? Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, near the harbor. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_a35f1342e53aecaa"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "far",
+        "location": {
+          "label": "Fictional coast, northern bay",
+          "lat": 15.12,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/searcher/far",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Find a seafood dinner. Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, northern bay. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_a9a53b4d71bde335"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "near",
+        "location": {
+          "label": "Fictional coast, near the harbor",
+          "lat": 15.004,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/searcher/near",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Find a seafood dinner. What would you suggest? Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, near the harbor. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_ba0ccff8235220ae"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "near",
+        "location": {
+          "label": "Fictional coast, near the harbor",
+          "lat": 15.004,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/planner/near",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Plan an evening with dinner and a walk. Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, near the harbor. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_bc9ac1d23c2e6c58"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "far",
+        "location": {
+          "label": "Fictional coast, northern bay",
+          "lat": 15.12,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/planner/far",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Plan an evening with dinner and a walk. Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, northern bay. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_bf1dfbbbc7952d52"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "far",
+        "location": {
+          "label": "Fictional coast, northern bay",
+          "lat": 15.12,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/planner/far",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Plan an evening with dinner and a walk. What would you suggest? Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, northern bay. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_c47dbdf7d6742466"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "far",
+        "location": {
+          "label": "Fictional coast, northern bay",
+          "lat": 15.12,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/planner/far",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Find a seafood dinner. Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, northern bay. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_c4f8732f3ae128cf"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "far",
+        "location": {
+          "label": "Fictional coast, northern bay",
+          "lat": 15.12,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/searcher/far",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Plan an evening with dinner and a walk. What would you suggest? Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, northern bay. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_de3f0d2a0cb4c25f"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "near",
+        "location": {
+          "label": "Fictional coast, near the harbor",
+          "lat": 15.004,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/searcher/near",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Find a seafood dinner. Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, near the harbor. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_e12eb0bcfa32054c"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "near",
+        "location": {
+          "label": "Fictional coast, near the harbor",
+          "lat": 15.004,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/planner/near",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Plan an evening with dinner and a walk. What would you suggest? Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, near the harbor. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_e2021d64bc37d185"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "searcher",
+        "weight": 1,
+        "planning_style": "atomic",
+        "interaction_style": "direct",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "decisive",
+        "price_sensitivity": "low",
+        "specificity": "specific"
+      },
+      "context": {
+        "id": "mid",
+        "location": {
+          "label": "Fictional coast, inland village",
+          "lat": 15.03,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/searcher/mid",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Plan an evening with dinner and a walk. What would you suggest? Be concise. I am new to this area; explain the basics. Help me settle on one choice. Quality matters more than savings within my budget. Give concrete names and explain their fit. Use my constraints as preferences. Location: Fictional coast, inland village. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_e67b4df59367b99c"
+    },
+    {
+      "task": {
+        "id": "evening",
+        "goal": "Plan an evening with dinner and a walk",
+        "intent": "planning",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "mid",
+        "location": {
+          "label": "Fictional coast, inland village",
+          "lat": 15.03,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "evening/planner/mid",
+      "weight": 0.08333333333333333,
+      "mode": "multi_turn",
+      "max_turns": 4,
+      "prompt": "I would like to Plan an evening with dinner and a walk. What would you suggest? Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, inland village. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 1,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_e9bda979e171651d"
+    },
+    {
+      "task": {
+        "id": "dinner",
+        "goal": "Find a seafood dinner",
+        "intent": "discovery",
+        "category": "restaurant"
+      },
+      "profile": {
+        "id": "planner",
+        "weight": 1,
+        "planning_style": "holistic",
+        "interaction_style": "conversational",
+        "constraint_level": "low",
+        "familiarity": "novice",
+        "decision_style": "exploratory",
+        "price_sensitivity": "low",
+        "specificity": "broad"
+      },
+      "context": {
+        "id": "mid",
+        "location": {
+          "label": "Fictional coast, inland village",
+          "lat": 15.03,
+          "lon": 74.0
+        },
+        "locale": "en-IN",
+        "budget": {
+          "amount": 1500,
+          "currency": "INR",
+          "basis": "per person"
+        }
+      },
+      "stratum": "dinner/planner/mid",
+      "weight": 0.08333333333333333,
+      "mode": "single_turn",
+      "max_turns": 1,
+      "prompt": "Help me Find a seafood dinner. Include this choice in a relaxed plan for the surrounding time. Explain how the options would suit my situation. I am new to this area; explain the basics. Help me explore a few possibilities. Quality matters more than savings within my budget. Start with a broad overview. Use my constraints as preferences. Location: Fictional coast, inland village. Locale: en-IN. Budget: 1500 INR per person.",
+      "variant": 0,
+      "generator": "templates-v1",
+      "policy": "refinement-v1",
+      "id": "j_ebebe616869c774d"
+    }
+  ],
+  "hash": "9058397343c1da6df5c0f082e7eef839162c0b7c724ae934a32db7acde5c49ad"
+}

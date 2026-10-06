@@ -1,0 +1,102 @@
+schema_version: '0.1'
+project:
+  name: AnswerBench fictional coastal demo
+  database: .answerbench/results.sqlite
+entity:
+  id: coastal
+  name: Demo Coastal Kitchen
+  type: restaurant
+  aliases: []
+  location:
+    lat: 15.0
+    lon: 74.0
+cohort:
+- id: harbor
+  name: Harbor Table
+  type: restaurant
+- id: palm
+  name: Palm Courtyard
+  type: restaurant
+tasks:
+- id: dinner
+  goal: Find a seafood dinner
+  intent: discovery
+  category: restaurant
+- id: evening
+  goal: Plan an evening with dinner and a walk
+  intent: planning
+  category: restaurant
+profiles:
+- id: planner
+  weight: 1
+  planning_style: holistic
+  interaction_style: conversational
+  constraint_level: low
+  familiarity: novice
+  decision_style: exploratory
+  price_sensitivity: low
+  specificity: broad
+- id: searcher
+  weight: 1
+  planning_style: atomic
+  interaction_style: direct
+  constraint_level: low
+  familiarity: novice
+  decision_style: decisive
+  price_sensitivity: low
+  specificity: specific
+contexts:
+- id: near
+  location:
+    label: Fictional coast, near the harbor
+    lat: 15.004
+    lon: 74.0
+  locale: en-IN
+  budget:
+    amount: 1500
+    currency: INR
+    basis: per person
+- id: mid
+  location:
+    label: Fictional coast, inland village
+    lat: 15.03
+    lon: 74.0
+  locale: en-IN
+  budget:
+    amount: 1500
+    currency: INR
+    basis: per person
+- id: far
+  location:
+    label: Fictional coast, northern bay
+    lat: 15.12
+    lon: 74.0
+  locale: en-IN
+  budget:
+    amount: 1500
+    currency: INR
+    basis: per person
+journeys:
+  mode: mixed
+  max_turns: 4
+  variants: 2
+sampling:
+  seed: 42
+  journeys: 24
+  repetitions: 3
+engines:
+- id: demo_a
+  adapter: fake
+  seed: 1
+- id: demo_b
+  adapter: fake
+  seed: 2
+execution:
+  concurrency: 4
+  max_attempts: 2
+  max_requests: 1000
+  timeout_seconds: 60
+analysis:
+  seed: 19
+  draws: 1000
+  min_journeys: 10
