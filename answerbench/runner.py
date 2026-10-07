@@ -65,7 +65,7 @@ def execute(store, rid, retry_failed=False, adapter_factory=adapter, sleep=time.
             if retry_failed:
                 db.execute("UPDATE executions SET status='pending' WHERE run_id=? AND status='failed'", (rid,))
             db.execute("UPDATE runs SET status='running' WHERE id=?", (rid,))
-        jobs = store.rows("SELECT * FROM executions WHERE run_id=? AND status='pending' ORDER BY id", (rid,))
+        jobs = store.rows("SELECT * FROM executions WHERE run_id=? AND status='pending' ORDER BY journey_id,engine_id,repetition", (rid,))
         random.Random(c['sampling']['seed']).shuffle(jobs)
 
         def status(xid, state, reason=None):

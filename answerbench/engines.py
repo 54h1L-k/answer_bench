@@ -31,6 +31,8 @@ def post_json(url, payload, key, timeout):
         raise EngineError('Provider returned invalid JSON') from None
 
 def normalize(raw, elapsed=0):
+    if not isinstance(raw, dict) or not isinstance(raw.get('output', []), list):
+        raise EngineError('Provider returned an invalid response structure')
     parts, citations = [], []
     for item in raw.get('output', []):
         if item.get('type') == 'message':

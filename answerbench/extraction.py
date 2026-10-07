@@ -92,22 +92,28 @@ def latest_batch(store, rid):
 
 def import_review(store, rid, records, source_batch=None):
     """Append corrected observations; preserve the original extraction batch."""
+    if not isinstance(records, list) or not records or any(not isinstance(r, dict) for r in records):
+        raise Invalid('Reviews must be a nonempty list of records')
     source_batch = source_batch or latest_batch(store, rid)
     base = store.one('SELECT * FROM extraction_batches WHERE id=? AND run_id=?', (source_batch, rid))
+    if base['evidence_hash'] != store.evidence_hash(rid):
+        raise Invalid('Evidence changed since extraction; extract again before reviewing')
     rows = store.rows('SELECT * FROM observations WHERE batch_id=?', (source_batch,))
     index = {(r['execution_id'], r['turn_index'], r['entity_id']): json.loads(r['data']) for r in rows}
     seen = set()
     for r in records:
-        key = (r['execution_id'], r['turn_index'], r['entity_id'])
-        if key not in index or key in seen or r.get('level') not in LEVELS or not r.get('reviewer'):
+        key = (r.get('execution_id'), r.get('turn_index'), r.get('entity_id'))
+        if any(type(v) not in (str, int) for v in key) or key not in index or key in seen or r.get('level') not in LEVELS or not r.get('reviewer'):
             raise Invalid('Invalid/duplicate review key, level or missing reviewer')
         seen.add(key)
         text = store.one('SELECT content FROM turns WHERE execution_id=? AND sequence=? AND role=?', (key[0], key[1] * 2 - 1, 'assistant'))['content']
         evidence = r.get('evidence', [])
+        if not isinstance(evidence, list) or any(not isinstance(ev, dict) for ev in evidence):
+            raise Invalid('Review evidence must be a list of spans')
         if r['level'] != 'none' and not evidence:
             raise Invalid('Positive review labels require evidence')
         for ev in evidence:
-            if type(ev.get('start')) is not int or type(ev.get('end')) is not int or not (0 <= ev['start'] < ev['end'] <= len(text)) or text[ev['start']:ev['end']] != ev['text']:
+            if type(ev.get('start')) is not int or type(ev.get('end')) is not int or not (0 <= ev['start'] < ev['end'] <= len(text)) or text[ev['start']:ev['end']] != ev.get('text'):
                 raise Invalid('Review evidence span does not match raw response')
         index[key] = index[key] | {'level': r['level'], 'status': 'reviewed', 'surfaced': r['level'] != 'none',
             'recommended': LEVELS.index(r['level']) >= 3, 'strong': r['level'] == 'strong_recommendation',

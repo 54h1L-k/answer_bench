@@ -28,6 +28,8 @@ def render_report(store, rid, destination):
     write_json(destination / 'report.json', report)
     write_json(destination / 'manifest.json', manifest)
     traces = [store.trace(x['id']) for x in store.rows('SELECT id FROM executions WHERE run_id=? ORDER BY engine_id,journey_id,repetition', (rid,))]
+    for trace in traces:
+        trace['observations'] = [dict(r, data=json.loads(r['data'])) for r in store.rows('SELECT turn_index,entity_id,data FROM observations WHERE batch_id=? AND execution_id=? ORDER BY turn_index,entity_id', (report['batch']['id'], trace['execution']['id']))]
     write_json(destination / 'evidence.json', traces)
     engines = []
     for result in report['engines']:
@@ -51,8 +53,8 @@ def render_report(store, rid, destination):
     for trace in traces:
         x = trace['execution']
         turns = ''.join(f'<div class="turn"><strong>{esc(t["role"].upper())}</strong><pre>{esc(t["content"])}</pre></div>' for t in trace['turns'])
-        observations = store.rows('SELECT turn_index,entity_id,data FROM observations WHERE batch_id=? AND execution_id=? ORDER BY turn_index,entity_id', (report['batch']['id'], x['id']))
-        labels = ''.join(f'<tr><td>{r["turn_index"]}</td><td>{esc(r["entity_id"])}</td><td>{esc(json.loads(r["data"])["level"])}</td><td>{esc(json.loads(r["data"])["status"])}</td></tr>' for r in observations)
+        observations = trace['observations']
+        labels = ''.join(f'<tr><td>{r["turn_index"]}</td><td>{esc(r["entity_id"])}</td><td>{esc(r["data"]["level"])}</td><td>{esc(r["data"]["status"])}</td></tr>' for r in observations)
         evidence.append(f'<details><summary>{esc(x["engine_id"])} · {esc(x["journey_id"])} · repeat {x["repetition"]+1} · {esc(x["status"])}</summary><p>Execution: {esc(x["id"])} · stop: {esc(x["stop_reason"])}</p>{turns}<table><tr><th>Turn</th><th>Entity</th><th>Label</th><th>Status</th></tr>{labels}</table></details>')
     candidates = store.rows('SELECT name,count(*) AS n FROM candidates WHERE batch_id=? GROUP BY name ORDER BY n DESC,name', (report['batch']['id'],))
     candidate_html = '<ul>' + ''.join(f'<li>{esc(c["name"])} — {c["n"]} occurrences; unverified</li>' for c in candidates) + '</ul>' if candidates else '<p>No additional bold-name candidates detected.</p>'
